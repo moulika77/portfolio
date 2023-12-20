@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Moulika Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Moulika Portfolio" name="keywords" />
+    <meta content="Moulika Portfolio" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/icon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!--form
+      method="POST"
+      action="https://script.google.com/macros/s/AKfycbzjdbtUEKFQ3_XdT4MLAQdB9-9RNnRM0kO8chxHoQdIE6wbQ6Ya9k_SbSjt0-9sK8-t/exec"
+    >
+      <input name="Email" type="email" placeholder="Email" required />
+      <input name="Name" type="text" placeholder="Name" required />
+      <button type="submit">Send</button>
+    </form-->
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5" id="contact">
+      <div class="container">
+        <div
+          class="position-relative d-flex align-items-center justify-content-center"
+        >
+          <h1
+            class="display-1 text-uppercase text-white"
+            style="-webkit-text-stroke: 1px #dee2e6"
+          >
+            Contact
+          </h1>
+          <h1 class="position-absolute text-uppercase text-primary">
+            Contact Me
+          </h1>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-form text-center">
+              <!--form name="sentMessage" id="contactForm" novalidate="novalidate">
+                <div class="form-row">
+                  <div class="control-group col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control p-4"
+                      id="name"
+                      placeholder="Your Name"
+                      required="required"
+                      data-validation-required-message="Please enter your name"
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="control-group col-sm-6">
+                    <input
+                      type="email"
+                      class="form-control p-4"
+                      id="email"
+                      placeholder="Your Email"
+                      required="required"
+                      data-validation-required-message="Please enter your email"
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="form-control p-4"
+                    id="subject"
+                    placeholder="Subject"
+                    required="required"
+                    data-validation-required-message="Please enter a subject"
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group">
+                  <textarea
+                    class="form-control py-3 px-4"
+                    rows="5"
+                    id="message"
+                    placeholder="Message"
+                    required="required"
+                    data-validation-required-message="Please enter your message"
+                  ></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="submit"
+                    id="submitMessageButton"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form-->
+
+              <form
+                id="contactForm"
+                method="POST"
+                action="https://script.google.com/macros/s/AKfycbzjdbtUEKFQ3_XdT4MLAQdB9-9RNnRM0kO8chxHoQdIE6wbQ6Ya9k_SbSjt0-9sK8-t/exec"
+              >
+                <div
+                  id="in-progress-message"
+                  class="alert alert-warning d-none"
+                >
+                  <strong>In Progress:</strong> Please wait...
+                </div>
+
+                <div id="success-message" class="alert alert-success d-none">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-hidden="true"
+                  >
+                    ×
+                  </button>
+                  <strong>Success:</strong> Message sent successfully!
+                </div>
+                <div class="form-row">
+                  <div class="control-group col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control p-4"
+                      name="Name"
+                      placeholder="Your name"
+                      required="required"
+                      data-validation-required-message="Please enter your name"
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="control-group col-sm-6">
+                    <input
+                      type="email"
+                      class="form-control p-4"
+                      name="Email"
+                      placeholder="Your Email"
+                      required="required"
+                      data-validation-required-message="Please enter your email"
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="form-control p-4"
+                    name="Subject"
+                    placeholder="Subject"
+                    required="required"
+                    data-validation-required-message="Please enter a subject"
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group">
+                  <textarea
+                    class="form-control py-3 px-4"
+                    rows="5"
+                    name="Message"
+                    placeholder="Message"
+                    required="required"
+                    data-validation-required-message="Please enter your message"
+                  ></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div>
+                  <button class="btn btn-outline-primary" type="submit">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact End -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <!--script src="mail/contact.js"></script-->
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#contactForm").submit(function (e) {
+          e.preventDefault();
+
+          // Show the in-progress message
+          $("#in-progress-message").removeClass("d-none");
+
+          $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function () {
+              // Hide the in-progress message
+              $("#in-progress-message").addClass("d-none");
+
+              // Show the success message
+              //$("#success-message").text("Form submitted successfully!");
+              $("#success-message").removeClass("d-none");
+
+              // Reset the form fields
+              $("#contactForm")[0].reset();
+
+              // Automatically hide the success message after 5 seconds
+              setTimeout(function () {
+                $("#success-message").addClass("d-none");
+              }, 5000);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
