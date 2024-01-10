@@ -934,15 +934,36 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="contact-form text-center">
-              <div id="success"></div>
-              <form name="sentMessage" id="contactForm" novalidate="novalidate">
+              <form
+                id="contactForm"
+                method="POST"
+                action="https://script.google.com/macros/s/AKfycbzjdbtUEKFQ3_XdT4MLAQdB9-9RNnRM0kO8chxHoQdIE6wbQ6Ya9k_SbSjt0-9sK8-t/exec"
+              >
+                <div
+                  id="in-progress-message"
+                  class="alert alert-warning d-none"
+                >
+                  <strong>In Progress:</strong> Please wait...
+                </div>
+
+                <div id="success-message" class="alert alert-success d-none">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-hidden="true"
+                  >
+                    ×
+                  </button>
+                  <strong>Success:</strong> Message sent successfully!
+                </div>
                 <div class="form-row">
                   <div class="control-group col-sm-6">
                     <input
                       type="text"
                       class="form-control p-4"
-                      id="name"
-                      placeholder="Your Name"
+                      name="Name"
+                      placeholder="Your name"
                       required="required"
                       data-validation-required-message="Please enter your name"
                     />
@@ -952,7 +973,7 @@
                     <input
                       type="email"
                       class="form-control p-4"
-                      id="email"
+                      name="Email"
                       placeholder="Your Email"
                       required="required"
                       data-validation-required-message="Please enter your email"
@@ -964,7 +985,7 @@
                   <input
                     type="text"
                     class="form-control p-4"
-                    id="subject"
+                    name="Subject"
                     placeholder="Subject"
                     required="required"
                     data-validation-required-message="Please enter a subject"
@@ -975,7 +996,7 @@
                   <textarea
                     class="form-control py-3 px-4"
                     rows="5"
-                    id="message"
+                    name="Message"
                     placeholder="Message"
                     required="required"
                     data-validation-required-message="Please enter your message"
@@ -983,11 +1004,7 @@
                   <p class="help-block text-danger"></p>
                 </div>
                 <div>
-                  <button
-                    class="btn btn-outline-primary"
-                    type="submit"
-                    id="sendMessageButton"
-                  >
+                  <button class="btn btn-outline-primary" type="submit">
                     Send Message
                   </button>
                 </div>
@@ -1063,5 +1080,38 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#contactForm").submit(function (e) {
+          e.preventDefault();
+
+          // Show the in-progress message
+          $("#in-progress-message").removeClass("d-none");
+
+          $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function () {
+              // Hide the in-progress message
+              $("#in-progress-message").addClass("d-none");
+
+              // Show the success message
+              //$("#success-message").text("Form submitted successfully!");
+              $("#success-message").removeClass("d-none");
+
+              // Reset the form fields
+              $("#contactForm")[0].reset();
+
+              // Automatically hide the success message after 5 seconds
+              setTimeout(function () {
+                $("#success-message").addClass("d-none");
+              }, 5000);
+            },
+          });
+        });
+      });
+    </script>
   </body>
 </html>
